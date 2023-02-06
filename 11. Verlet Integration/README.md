@@ -1,1 +1,1 @@
-simple cloth simulation written with Verlet integration
+simple cloth simulation written with Verlet integration and SFML for rendering
