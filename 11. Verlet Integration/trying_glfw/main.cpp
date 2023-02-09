@@ -1,5 +1,5 @@
 #include <stdio.h>
-// #include "shader/load_shader.h"
+#include "shader/load_shader.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -75,13 +75,7 @@ void init_vertexbuffer(void) {
 void render(void) {
   glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
   do {
-    // render_triangle();
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    glDisableVertexAttribArray(0);
+    render_triangle();
     glClear(GL_COLOR_BUFFER_BIT);
     
     glfwSwapBuffers(window);
