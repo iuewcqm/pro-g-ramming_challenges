@@ -30,7 +30,7 @@ def tryDecryptMessage(encrypt):
     return decryptedMessages
 
 def menu():
-    print("1: encrypt\n2: decrypt\n3: decrypt without key\n4: exit")
+    print("1: encrypt\n2: decrypt\n3: try decrypt without key\n4: exit")
     choice = input()
     if choice == '1':
         message = input('message: ')
