@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <ncurses.h>
 #include <unistd.h>
 
@@ -6,21 +5,26 @@
 
 int main(void) {
   initscr();
+  cbreak();
+  keypad(stdscr, TRUE);
   noecho();
   curs_set(FALSE);
+  
+  border(ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER);
 
-  WINDOW *window = newwin(10, 10, 20, 20);
+  move(1,1);
 
-  int max_x, max_y;
   while(1) {
-    clear();
-    getmaxyx(stdscr, max_y, max_x);
-    border('|', '|', '-', '-', '+', '+', '+', '+');
+    char ch = getch();
+    // printw("%c", ch);
+    addch(ch | A_STANDOUT);
     
     refresh();
     usleep(DELAY);
   }
-
+  
   clear();
   endwin();
+
+  return 0;
 }
