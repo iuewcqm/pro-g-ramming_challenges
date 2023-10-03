@@ -7,8 +7,6 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#define PORT_LENGTH
-
 void usage(char **argv) {
   printf("Usage:\n   %s <IP> [PORT]\n", argv[0]);
 }
